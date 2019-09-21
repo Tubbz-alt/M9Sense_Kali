@@ -25,4 +25,4 @@ I've only managed to get this to compile on Manjaro Linux/Arch. Just run the bui
 
 If the script is ran successfully, you should have an installer zip file that will allow you to flash Kali Nethunter onto your device through the recovery menu (TWRP is recommended). To find out where the installer is located, use your eyes and the terminal output should tell you where it is.
 
- I DO NOTtake responsibility for whatever the outcome that may occur when you fiddle around with this and your device.
+ I DO NOT take responsibility for whatever the outcome that may occur when you fiddle around with this and your device.
