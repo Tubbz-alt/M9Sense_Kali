@@ -1,2 +1,28 @@
-# M9Sense_Kali
-Kali Nethunter for the HTC One M9 (WIP)
+# Kali Nethunter for the HTC One M9 (WIP).
+![Kali NetHunter](https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-project/raw/master/images/nethunter-git-logo.png)
+HTC One M9, with magic.
+
+This is based on the ElementalX 5 kernel for the One M9, with the additions of 802.11 RAW frame injection support and various device drivers that you'd expect from a Nethunter device (Atheros and Realtek drivers to name a few). A keyboard gadget patch is yet to be implemented.
+
+# Issues.
+This is perhaps the worst kernel source I've ever had to work with. Plagued with compilation issues and took a lot of time to figure out workarounds to get the piece of crap to compile properly (which also takes forever to complete, whereas my previous HTC device kernels compile within 5 minutes or less!). After successfully compiling and creating a Nethunter installer, the device would boot but for whatever reason Android would say the SD card is corrupted when it is not (and I can mount it over ADB!), and restoring the original boot image allows the SD card to be automatically mounted by Android again.
+
+
+
+# Kernel sources.
+
+Source code for the modified kernel(s) can be found [here](https://github.com/lavanoid/ElementalX-m9)
+
+Currently the only supported ROM is 7.0 Nougat Sense, though there may be support for other ROMs in the future.
+
+
+# Compiling.
+
+I've only managed to get this to compile on Manjaro Linux/Arch. Just run the build script and you should soon have a Kali Nethunter installer.
+
+    bash ./build.sh
+
+
+If the script is ran successfully, you should have an installer zip file that will allow you to flash Kali Nethunter onto your device through the recovery menu (TWRP is recommended). To find out where the installer is located, use your eyes and the terminal output should tell you where it is.
+
+ I DO NOTtake responsibility for whatever the outcome that may occur when you fiddle around with this and your device.
