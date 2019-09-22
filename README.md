@@ -5,9 +5,9 @@ HTC One M9, with magic.
 This is based on the ElementalX 5 kernel for the One M9, with the additions of 802.11 RAW frame injection support and various device drivers that you'd expect from a Nethunter device (Atheros and Realtek drivers to name a few). A keyboard gadget patch is yet to be implemented.
 
 # Issues.
-This is perhaps the worst kernel source I've ever had to work with. Plagued with compilation issues and took a lot of time to figure out workarounds to get the piece of crap to compile properly (which also takes forever to complete, whereas my previous HTC device kernels compile within 5 minutes or less!). After successfully compiling and creating a Nethunter installer, the device would boot but for whatever reason Android would say the SD card is corrupted when it is not (and I can mount it over ADB!), and restoring the original boot image allows the SD card to be automatically mounted by Android again.
+This is perhaps the worst kernel source I've ever had to work with. Plagued with compilation issues and took a lot of time to figure out workarounds to get the piece of crap to compile properly (which also takes forever to complete, whereas my previous HTC device kernels compile within 5 minutes or less!).
 
-
+On the bright side, I've got it to build!
 
 # Kernel sources.
 
