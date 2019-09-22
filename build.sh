@@ -102,11 +102,11 @@ if [[ ! -d "./kernel" ]]; then
 fi
 
 echo "[CONFIGURE] Downloading Kali Nethunter..."
-#git clone https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-project kali-nethunter
-git clone https://github.com/offensive-security/kali-nethunter
+git clone https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-project kali-nethunter
+#git clone https://github.com/offensive-security/kali-nethunter
 cd kali-nethunter
-git checkout bbe58dcd2a3ae70db7dac01b2b1e372695261335
-#git pull origin master
+#git checkout bbe58dcd2a3ae70db7dac01b2b1e372695261335
+git pull origin master
 cd ..
 
 if [[ $1 != "--nokern" ]]; then
@@ -184,3 +184,4 @@ export HOSTNAME=$ORIGINALHOSTNAME
 sudo hostname "$ORIGINALHOSTNAME"
 echo "OK"
 echo "[DONE] Compilation complete."
+
