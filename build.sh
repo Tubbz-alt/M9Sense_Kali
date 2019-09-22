@@ -77,16 +77,16 @@ if NPROC=$(nproc); then
 fi
 
 #This will appear in the kernel string, such as "root@kali".
-#HOST="kali"
+HOST="kali"
 
-#echo "[CONFIGURE] Changing system host name to '"$HOST"'..."
+echo "[CONFIGURE] Changing system host name to '"$HOST"'..."
 # Backup the original hostname, then change it to the value of "HOST".
-#ORIGINALHOSTNAME=`hostname`
-#echo "Original hostname: $ORIGINALHOSTNAME"
-#export HOSTNAME=$HOST
-#sudo hostname "$HOST"
-#echo "Current hostname: "`hostname`
-#sleep 2
+ORIGINALHOSTNAME=$(hostname)
+echo "Original hostname: $ORIGINALHOSTNAME"
+export HOSTNAME=$HOST
+sudo hostname "$HOST"
+echo "Current hostname: "$(hostname)
+sleep 2
 
 echo "[CONFIGURE] Downloading arm toolchain..."
 git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 toolchain
@@ -116,11 +116,6 @@ if [[ $1 != "--nokern" ]]; then
     fi
 
     cd kernel
-    #if [[ ! -f "mac80211.compat08082009.wl_frag+ack_v1.patch" ]]; then
-    #    echo "[PATCH] Patching 802.11..."
-    #    wget http://patches.aircrack-ng.org/mac80211.compat08082009.wl_frag+ack_v1.patch
-    #    patch -p1 < mac80211.compat08082009.wl_frag+ack_v1.patch
-    #fi
     mkdir -p out
     echo "[BUILD] Loading kernel config..."
     make "$KERN_CONFIG"
@@ -184,8 +179,8 @@ python build.py -d $KALI_DEVNAME --$KERN_ANDROIDVER
 echo "[INFO] Python script called. Cleaning up..."
 echo "Original hostname: $ORIGINALHOSTNAME"
 
-#echo "[CONFIGURE] Restoring system host name to '"$ORIGINALHOSTNAME"'..."
-#export HOSTNAME=$ORIGINALHOSTNAME
-#sudo hostname "$ORIGINALHOSTNAME"
-#echo "OK"
+echo "[CONFIGURE] Restoring system host name to '"$ORIGINALHOSTNAME"'..."
+export HOSTNAME=$ORIGINALHOSTNAME
+sudo hostname "$ORIGINALHOSTNAME"
+echo "OK"
 echo "[DONE] Compilation complete."
