@@ -1,4 +1,4 @@
-# Kali Nethunter for the HTC One M9 (WIP).
+# Kali Nethunter for the HTC One M9.
 ![Kali NetHunter](https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-project/raw/master/images/nethunter-git-logo.png)
 HTC One M9, with magic.
 
